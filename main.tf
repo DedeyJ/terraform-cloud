@@ -1,4 +1,5 @@
 terraform {
+  ### Two required providers, AWS for setting up in cloud and docker to help build Docker Images
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,8 +11,9 @@ terraform {
     }
   
   }
+  ### This Bucket is setup before running Terraform. bucket and region should be set correctly here. 
   backend "s3" {
-    bucket = "dedeyjbucket"
+    bucket = "bucket name"
     key    = "test/terraform.tfstate"
     region = "eu-west-1"
   }

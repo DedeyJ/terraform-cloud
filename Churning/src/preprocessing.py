@@ -1,7 +1,4 @@
-import os
 import pandas as pd
-import pickle
-import gzip
 from imblearn.over_sampling import SMOTE
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler

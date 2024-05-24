@@ -1,10 +1,10 @@
 variable "env" {
-  default     = "dedeyj"
+  default     = "name"                  ### Should be changed, bucket name will be made using this variabele
   description = "Name of the environment"
 }
 
 variable "app_name" {
-  default = "mlflow-terraform"
+  default = "mlflow-terraform"          ### Should be changed to fit your needs, bucket name will be made using this variabele
 }
 
 variable "cidr" {
@@ -60,9 +60,9 @@ variable "internet_cidr" {
 }
 
 variable "ecs_service_name" {
-  default = "mlflow-test"
+  default = "mlflow-test"       ### Change this if you want.
 }
 
 variable "ecs_task_name" {
-  default = "mlflow-test"
+  default = "mlflow-test"       ### Change this if you want.
 }

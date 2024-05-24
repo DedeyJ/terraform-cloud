@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import mlflow
 import optuna
 import os
@@ -7,6 +8,9 @@ from sklearn.metrics import accuracy_score
 
 from preprocessing import DataPreprocessor
 
+
+
+
 # to allow logging
 optuna.logging.set_verbosity(optuna.logging.ERROR)
 
@@ -15,12 +19,8 @@ optuna.logging.set_verbosity(optuna.logging.ERROR)
 ### Setup to allow tracking with MLFlow in Cloud ###
 ####################################################
 
-# The Mlflow is set up to require login credentials.  
-os.environ["MLFLOW_TRACKING_USERNAME"] = 'mlflow-user' # Is setup to be that username standard, if you change it, change it here as well.
-os.environ["MLFLOW_TRACKING_PASSWORD"] =  'mlflow_password' # Looks this up in the AWS parameter store
+load_dotenv(".env") ### Make sure the parameters are set up correctly in this file.
 
-
-mlflow.set_tracking_uri('mlflow_tracking_uri') # Look this up in AWS parameter store or in the ECS information in AWS.
 
 
 #############################
